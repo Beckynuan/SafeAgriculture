@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg"
+
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="335dp"
+        android:layout_height="94dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="#C35A5A"
+
+        android:drawableLeft="@drawable/ic_launcher_foreground"
+        android:text="@string/app_name"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="15dp">
+
+
+    </Button>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
