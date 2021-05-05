@@ -11,13 +11,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ImageView imageView;
+    private String path = "https://raw.githubusercontent.com/Beckynuan/comp5703/16f3c71b6f529d8da5bad3da64ecc93e76f8909e/resources/1.jpeg?token=ARLDXLTTSBJXVIMAHZYZOHLAPJYIQ";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.imageUrl);
-        Picasso.get().load("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80").into(imageView);
+        Picasso.get().load(path).into(imageView);
 
     }
 }

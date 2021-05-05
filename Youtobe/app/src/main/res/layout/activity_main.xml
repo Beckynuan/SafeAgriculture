@@ -27,6 +27,9 @@
         android:layout_marginTop="20dp"
         app:autoPlay="false"
         app:videoId="mWpnmE5Kltw"
+        app:showFullScreenButton="true"
+        app:showSeekBar="true"
+
         />
 
 
