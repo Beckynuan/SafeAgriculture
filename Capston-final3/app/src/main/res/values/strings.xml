@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Capston</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="R1"> Brodifacoum</string>
+    <string name="R2">Cholecalciferol</string>
+    <string name="R3">Bromethalin</string>
+    <string name="R4">Chlorphacinone</string>
+    <string name="R5">Diphacinone</string>
+    <string name="R6">Bromadiolone</string>
+    <string name="R7"> Difethialone</string>
+    <string name="R8">Zinc phosphide</string>
+    <string name="R9">Strychnine</string>
+    <string name="R10">Warfarin</string>
+
+    <string name="s1">Metaldehyde</string>
+    <string name="s2"> Methiocarb</string>
+    <string name="s3">Acetylcholinesterase inhibitors</string>
+    <string name="s4">Ferric phosphate</string>
+    <string name="s5">Phosphoric Acid</string>
+
+</resources>

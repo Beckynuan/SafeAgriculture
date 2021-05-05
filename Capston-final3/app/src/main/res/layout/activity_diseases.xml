@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="My_plan.Disease.DiseasesActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarStyle" >
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:id="@+id/toolbar_title"
+            android:text="Diseases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:id="@+id/toolbar_title2"
+            android:text="English"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/Db1"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Dithane"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+
+            <Button
+                android:id="@+id/Db2"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Azoxystrobin"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Db3"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Difenoconazole"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Db4"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Fludioxonil"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Db5"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Acibenzolar-S-methyl"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Db6"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Thiabendazole"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Db7"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Cyproconozole"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Db8"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Propiconazole"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Db9"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Cyprodinil"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Db10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Pydiflumetofen"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
