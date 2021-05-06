@@ -20,7 +20,7 @@ public class welcomePage extends Activity {
         startMainActivity();
     }
 
-    //text by vincent
+    //text by vincent second
     private void startMainActivity() {
         TimerTask delaytask = new TimerTask() {
             @Override
