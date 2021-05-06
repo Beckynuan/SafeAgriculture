@@ -19,8 +19,8 @@ public class welcomePage extends Activity {
         // getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         startMainActivity();
     }
+//test by vincent
 
-    //text by vincent second
     private void startMainActivity() {
         TimerTask delaytask = new TimerTask() {
             @Override
