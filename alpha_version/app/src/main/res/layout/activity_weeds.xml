@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="My_plan.Weeds.WeedsActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ToolbarStyle" >
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:id="@+id/toolbar_title"
+            android:text="Weeds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:id="@+id/toolbar_title2"
+            android:text="English"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/Wb1"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Atrazine"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+
+            <Button
+                android:id="@+id/Wb2"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="S-metolachlor"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Wb3"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Mesotrione"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Wb4"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Bicyclopyrone"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Wb5"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Triasulfuron"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Wb6"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Pinoxaden"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Wb7"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Sulfentrazone"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Wb8"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Glyphosate"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Wb9"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Clodinafop-propargyl"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+
+            <Button
+                android:id="@+id/Wb10"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/setbar_bg"
+                android:text="Benoxacor"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/black">
+            </Button>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
