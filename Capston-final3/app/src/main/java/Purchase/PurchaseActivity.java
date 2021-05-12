@@ -40,8 +40,8 @@ public class PurchaseActivity extends AppCompatActivity {
     private String t1_url,t2_url;
 
     private TextView Pt1,Pt2,Pt3,Pt4;
-    String Ptitle1 = "https://raw.githubusercontent.com/jackie-1219/text/main/Purchase_title.txt";
-    String Pstatement1 = "https://raw.githubusercontent.com/jackie-1219/text/main/Purchase_statement.txt";
+    String Ptitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_title.txt";
+    String Pstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_statement.txt";
 
     String Ptitle2 = "https://raw.githubusercontent.com/jackie-1219/text/main/Purchase_Ctitle.txt";
     String Pstatement2 = "https://raw.githubusercontent.com/jackie-1219/text/main/Purchase_Cstatement.txt";

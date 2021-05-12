@@ -31,6 +31,6 @@ public class welcomePage extends Activity {
 
         };
         Timer timer=new Timer();
-        timer.schedule(delaytask,2000);
+        timer.schedule(delaytask,2800);
     }
 }
