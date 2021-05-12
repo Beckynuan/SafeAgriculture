@@ -34,11 +34,11 @@ public class EquipmentActivity extends AppCompatActivity {
     private String t1_url,t2_url;
 
     private TextView Et1,Et2;
-    String Etitle1 = "https://raw.githubusercontent.com/jackie-1219/text/Cleanning/Cleanning_title.txt";
-    String Estatement1 = "https://raw.githubusercontent.com/jackie-1219/text/Cleanning/Cleanning_statement.txt";
+    String Etitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_title.txt";
+    String Estatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_statement.txt";
 
-    String Etitle2 = "https://raw.githubusercontent.com/jackie-1219/text/Cleanning/Cleanning_Ctitle.txt";
-    String Estatement2 = "https://raw.githubusercontent.com/jackie-1219/text/Cleanning/Cleanning_Cstatement.txt";
+    String Etitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_Ctitle.txt";
+    String Estatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_Cstatement.txt";
 
     YouTubePlayerView Eplayer;
 
