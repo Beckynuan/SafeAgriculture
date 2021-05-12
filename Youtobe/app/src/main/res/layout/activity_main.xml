@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"
+        android:text="Youtobe player"
+        android:layout_centerHorizontal="true"
+        android:textColor="#3F51B5"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:backgroundTintMode="multiply"
+        />
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/youtobeVIew"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="20dp"
+        app:autoPlay="false"
+        app:videoId="mWpnmE5Kltw"
+        app:showFullScreenButton="true"
+        app:showSeekBar="true"
+
+        />
+
+
+
+</RelativeLayout>
