@@ -34,11 +34,11 @@ public class StorageActivity extends AppCompatActivity {
     private String t1_url,t2_url;
 
     private TextView St1,St2;
-    String Stitle1 = "https://raw.githubusercontent.com/jackie-1219/text/Storage/Storage_title.txt";
-    String Sstatement1 = "https://raw.githubusercontent.com/jackie-1219/text/Storage/Storage_statement.txt";
+    String Stitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeStorage/SafeStorage_title.txt";
+    String Sstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeStorage/SafeStorage_statement.txt";
 
-    String Stitle2 = "https://raw.githubusercontent.com/jackie-1219/text/Storage/Storage_Ctitle.txt";
-    String Sstatement2 = "https://raw.githubusercontent.com/jackie-1219/text/Storage/Storage_Cstatement.txt";
+    String Stitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeStorage/SafeStorage_Ctitle.txt";
+    String Sstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeStorage/SafeStorage_Cstatement.txt";
 
     YouTubePlayerView Splayer;
 

@@ -34,11 +34,11 @@ public class SprayingActivity extends AppCompatActivity {
     private String t1_url,t2_url;
 
     private TextView Spt1,Spt2;
-    String Sptitle1 = "https://raw.githubusercontent.com/jackie-1219/text/Spraying/Spraying_title.txt";
-    String Spstatement1 = "https://raw.githubusercontent.com/jackie-1219/text/Spraying/Spraying_statement.txt";
+    String Sptitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Spraying/Spraying_title.txt";
+    String Spstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Spraying/Spraying_statement.txt";
 
-    String Sptitle2 = "https://raw.githubusercontent.com/jackie-1219/text/Spraying/Spraying_Ctitle.txt";
-    String Spstatement2 = "https://raw.githubusercontent.com/jackie-1219/text/Spraying/Spraying_Cstatement.txt";
+    String Sptitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Spraying/Spraying_Ctitle.txt";
+    String Spstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Spraying/Spraying_Cstatement.txt";
 
     YouTubePlayerView Spplayer;
 

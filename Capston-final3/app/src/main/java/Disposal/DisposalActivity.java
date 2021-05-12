@@ -34,11 +34,11 @@ public class DisposalActivity extends AppCompatActivity {
     private String t1_url,t2_url;
 
     private TextView Dt1,Dt2;
-    String Dtitle1 = "https://raw.githubusercontent.com/jackie-1219/text/Disposal/Disposal_title.txt";
-    String Dstatement1 = "https://raw.githubusercontent.com/jackie-1219/text/Disposal/Disposal_statement.txt";
+    String Dtitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeDisposal/Disposal_title.txt";
+    String Dstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeDisposal/Disposal_statement.txt";
 
-    String Dtitle2 = "https://raw.githubusercontent.com/jackie-1219/text/Disposal/Disposal_Ctitle.txt";
-    String Dstatement2 = "https://raw.githubusercontent.com/jackie-1219/text/Disposal/Disposal_Cstatement.txt";
+    String Dtitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeDisposal/Disposal_Ctitle.txt";
+    String Dstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeDisposal/Disposal_Cstatement.txt";
 
     YouTubePlayerView Dplayer;
 
