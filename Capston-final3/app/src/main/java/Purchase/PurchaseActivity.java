@@ -43,8 +43,8 @@ public class PurchaseActivity extends AppCompatActivity {
     String Ptitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_title.txt";
     String Pstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_statement.txt";
 
-    String Ptitle2 = "https://raw.githubusercontent.com/jackie-1219/text/main/Purchase_Ctitle.txt";
-    String Pstatement2 = "https://raw.githubusercontent.com/jackie-1219/text/main/Purchase_Cstatement.txt";
+    String Ptitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_Ctitle.txt";
+    String Pstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_Cstatement.txt";
 
     YouTubePlayerView player;
 
