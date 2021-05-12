@@ -117,6 +117,7 @@ tools:context="My_plan.Insect.Item1_Activity">
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="0.5dp"
                 android:background="#000000"
+                android:backgroundTintMode="multiply"
                 />
 
             <TextView
