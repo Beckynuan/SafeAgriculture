@@ -43,8 +43,8 @@ public class Item1_Activity extends AppCompatActivity {
     AsyncHttpClient asyncHttpClient;
 
     String image_url = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Dithane.jpeg";
-    String text_url_eng = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/che_detail.txt";
-    String text_url_cha = "https://raw.githubusercontent.com/jackie-1219/text/level/level.txt";
+    String text_url_eng = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/MyPlan/MyPlan_Eng.txt";
+    String text_url_cha = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/MyPlan/Myplan_Chinese.txt";
 
     private Toolbar toolbar;
     private TextView mTvBack;

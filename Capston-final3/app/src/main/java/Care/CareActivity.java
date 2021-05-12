@@ -34,11 +34,11 @@ public class CareActivity extends AppCompatActivity {
     private String t1_url,t2_url;
 
     private TextView Ct1,Ct2;
-    String Ctitle1 = "https://raw.githubusercontent.com/jackie-1219/text/Care/Care_title.txt";
-    String Cstatement1 = "https://raw.githubusercontent.com/jackie-1219/text/Care/Care_statement.txt";
+    String Ctitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeCare/Care_title.txt";
+    String Cstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeCare/Care_statement.txt";
 
-    String Ctitle2 = "https://raw.githubusercontent.com/jackie-1219/text/Care/Care_Ctitle.txt";
-    String Cstatement2 = "https://raw.githubusercontent.com/jackie-1219/text/Care/Care_Cstatement.txt";
+    String Ctitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeCare/Care_Ctitle.txt";
+    String Cstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeCare/Care_Cstatement.txt";
 
     YouTubePlayerView Cplayer;
 
