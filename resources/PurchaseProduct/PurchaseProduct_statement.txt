@@ -1,5 +1,6 @@
 Chongqing Express
-;;
+
+
 Film Director: Wong Kar-wai
 
 Chungking Express is a 1994 Hong Kong romantic crime comedy-drama film written and directed by Wong Kar-wai.[4][5] 
@@ -7,4 +8,3 @@ The film consists of two stories told in sequence, each about a lovesick Hong Ko
 
 The first story stars Takeshi Kaneshiro as a cop obsessed with his breakup with a woman named May, and his encounter with a mysterious drug smuggler (Brigitte Lin). 
 The second stars Tony Leung as a police officer roused from his gloom over the loss of his flight attendant girlfriend (Valerie Chow) by the attentions of a quirky snack bar worker (Faye Wong).
-
