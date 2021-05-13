@@ -35,7 +35,6 @@ import cz.msebera.android.httpclient.Header;
 
 public class PurchaseActivity extends AppCompatActivity {
 
-    //vincent test
     AsyncHttpClient asyncHttpClient;
     private String t1_url,t2_url;
 
