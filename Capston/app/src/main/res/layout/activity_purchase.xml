@@ -43,24 +43,24 @@
          android:orientation="vertical">
 
          <TextView
-             android:id="@+id/ETitle"
+             android:id="@+id/PTitle"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_marginTop="40dp"
              android:gravity="left"
              android:layout_marginLeft="10dp"
-             android:textSize="16sp"
+             android:textSize="25sp"
              android:textStyle="bold"
              android:textColor="#000000"
              tools:ignore="DuplicateIds,MissingConstraints" />
 
          <me.biubiubiu.justifytext.library.JustifyTextView
-             android:id="@+id/EStatement"
+             android:id="@+id/PStatement"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:layout_marginTop="2dp"
              android:padding="10dp"
              android:text="Waiting"
+             android:textSize="15dp"
              android:textColor="@color/black"
              android:layout_marginLeft="10dp"
              tools:ignore="DuplicateIds,HardcodedText,MissingConstraints" />

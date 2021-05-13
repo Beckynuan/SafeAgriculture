@@ -27,8 +27,6 @@
         <item name="actionMenuTextColor">@color/black</item>
         <item name="actionMenuTextAppearance">@style/MenuTextStyle</item>
         <item name="textAllCaps">false</item>
-        <item name="android:actionButtonStyle">@style/myActionButtonStyle</item>
-
     </style>
 
     <style name="MenuTextStyle">
@@ -36,11 +34,5 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="myActionButtonStyle" parent="Widget.AppCompat.ActionButton">
-        <item name="android:paddingLeft">0dip</item>
-        <item name="android:paddingRight">0dip</item>
-        <item name="android:minWidth">16dp</item>
-        <item name="android:minHeight">16dp</item>
-    </style>
 
 </resources>

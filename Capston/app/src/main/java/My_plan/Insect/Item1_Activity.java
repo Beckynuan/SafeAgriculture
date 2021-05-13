@@ -152,19 +152,6 @@ public class Item1_Activity extends AppCompatActivity {
         updateLanguage(false);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //导入菜单布局
-        getMenuInflater().inflate(R.menu.main_total, menu);
-        return true;
-    }
-
-    //menu已经准备好，可以修改文字
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        return super.onPrepareOptionsMenu(menu);
-
-    }
-
 
     /**
      * 设置窗口的背景透明度

@@ -1,9 +1,15 @@
 package Purchase;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -38,11 +44,11 @@ public class PurchaseActivity extends AppCompatActivity {
     AsyncHttpClient asyncHttpClient;
     private String t1_url,t2_url;
 
-    private TextView Pt1,Pt2,Pt3,Pt4;
-    String Ptitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_title.txt";
+    private TextView Ptitle;
+    private TextView Pstatement;
+
     String Pstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_statement.txt";
 
-    String Ptitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_Ctitle.txt";
     String Pstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/PurchaseProduct/PurchaseProduct_Cstatement.txt";
 
     YouTubePlayerView player;
@@ -59,8 +65,9 @@ public class PurchaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
-        Pt1=(TextView)findViewById(R.id.ETitle);
-        Pt2=(TextView)findViewById(R.id.EStatement);
+
+        Ptitle=(TextView)findViewById(R.id.PTitle);
+        Pstatement=(TextView)findViewById(R.id.PStatement);
 
         mToolbarTitle = findViewById(R.id.toolbar_title);
         toolbar = findViewById(R.id.toolbar);
@@ -212,18 +219,20 @@ public class PurchaseActivity extends AppCompatActivity {
     //统一修改切换中英文方法 isForcibly 强制转换
     private void updateLanguage(boolean isReplace) {
         if (Constants.isChinese) {
-            t1_url=Ptitle2;
-            t2_url=Pstatement2;
+            t1_url=Pstatement2;
             executeLoopjCall();
-            Pt2.setText("等待中");
+            Ptitle.setText("");
+            Pstatement.setText("等待中");
+
             //修改标题
             mToolbarTitle.setText("购买");
             mTvBack.setText("返回");
             toolbar.setNavigationIcon(bitmapDescriptorFactory.fromView(mBackView));
         } else {
-            t1_url=Ptitle1;
-            t2_url=Pstatement1;
+            t1_url=Pstatement1;
             executeLoopjCall();
+            Ptitle.setText("");
+            Pstatement.setText("Waiting ....");
 
             mToolbarTitle.setText("Purchase");
             mTvBack.setText("Back");
@@ -257,26 +266,30 @@ public class PurchaseActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String str = new String(responseBody);
-                Pt1.setText(str);
+                dataHandle(str);
             }
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Pt1.setText("Fail to get the content");
+                Pstatement.setText("Fail to get the content");
             }
         } );
-
-        new AsyncHttpClient().get(t2_url, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                String str = new String(responseBody);
-                Pt2.setText(str);
-
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Pt1.setText("网路连接失败");
-            }
-        } );
-
     }
+
+//    private String splite = "\n\n";
+    private void dataHandle(String data) {
+        String title = "";
+        String content = "";
+
+
+        int index =  data.indexOf("\n");
+        if(index>0){
+            title=data.substring(0,index);
+            content= data.substring(index);
+        }
+
+
+        Pstatement.setText(content);
+        Ptitle.setText(title);
+    }
+
 }
