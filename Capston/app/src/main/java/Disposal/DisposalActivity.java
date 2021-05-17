@@ -47,7 +47,7 @@ public class DisposalActivity extends AppCompatActivity {
     private TextView mToolbarTitle;
     private View mBackView;
 
-    //View 转化Drawable辅助类
+    //View 转化Drawable辅助类（郭老师）
     private BitmapDescriptorFactory bitmapDescriptorFactory=new BitmapDescriptorFactory();
 
 
