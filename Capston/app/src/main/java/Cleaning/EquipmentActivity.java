@@ -275,6 +275,7 @@ public class EquipmentActivity extends AppCompatActivity {
             content= data.substring(index);
         }
 
+        //
         Et1.setText(title);
         Et2.setText(content);
     }
