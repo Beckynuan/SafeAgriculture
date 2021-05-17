@@ -26,22 +26,28 @@
         </activity>
 
         <activity android:name="Care.CareActivity"
-            android:theme="@style/Theme.Capston.NoAction"/>
+            android:theme="@style/Theme.Capston.NoAction"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
         <activity android:name="Cleaning.EquipmentActivity"
-            android:theme="@style/Theme.Capston.NoAction"/>
+            android:theme="@style/Theme.Capston.NoAction"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
         <activity android:name="Disposal.DisposalActivity"
-            android:theme="@style/Theme.Capston.NoAction"/>
+            android:theme="@style/Theme.Capston.NoAction"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
         <activity android:name="Spraying.SprayingActivity"
-            android:theme="@style/Theme.Capston.NoAction"/>
+            android:theme="@style/Theme.Capston.NoAction"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
         <activity android:name="Mixing.MixingActivity"
-            android:theme="@style/Theme.Capston.NoAction"/>
+            android:theme="@style/Theme.Capston.NoAction"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
         <activity android:name="Storage.StorageActivity"
-            android:theme="@style/Theme.Capston.NoAction"/>
+            android:theme="@style/Theme.Capston.NoAction"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
         <activity android:name="My_plan.Snails.SnailsActivity"
             android:theme="@style/Theme.Capston.NoAction">
