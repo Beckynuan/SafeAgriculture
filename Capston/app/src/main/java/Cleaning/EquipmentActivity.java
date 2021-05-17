@@ -40,7 +40,7 @@ public class EquipmentActivity extends AppCompatActivity {
     String Etitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_Ctitle.txt";
     String Estatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_Cstatement.txt";
 
-    YouTubePlayerView Eplayer;
+    YouTubePlayerView Eplayer; // ssss
 
     private Toolbar toolbar;
     private TextView mTvBack;
