@@ -145,7 +145,6 @@ public class Item1_Activity extends AppCompatActivity {
 
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();

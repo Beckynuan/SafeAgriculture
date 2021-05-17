@@ -31,13 +31,12 @@ import cz.msebera.android.httpclient.Header;
 
 public class StorageActivity extends AppCompatActivity {
     AsyncHttpClient asyncHttpClient;
-    private String t1_url,t2_url;
+    private String t1_url;
 
     private TextView St1,St2;
-    String Stitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeStorage/SafeStorage_title.txt";
+
     String Sstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeStorage/SafeStorage_statement.txt";
 
-    String Stitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeStorage/SafeStorage_Ctitle.txt";
     String Sstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeStorage/SafeStorage_Cstatement.txt";
 
     YouTubePlayerView Splayer;
@@ -208,25 +207,24 @@ public class StorageActivity extends AppCompatActivity {
     //统一修改切换中英文方法 isForcibly 强制转换
     private void updateLanguage(boolean isReplace) {
         if (Constants.isChinese) {
-            t1_url=Stitle2;
-            t2_url=Sstatement2;
+            t1_url=Sstatement2;
             executeLoopjCall();
 
-            St1.setText("等待中");
+            St1.setText("");
+            St2.setText("等待中");
             //修改标题
             mToolbarTitle.setText("储存");
             mTvBack.setText("返回");
             toolbar.setNavigationIcon(bitmapDescriptorFactory.fromView(mBackView));
         } else {
-            t1_url=Stitle1;
-            t2_url=Sstatement1;
+            t1_url=Sstatement1;
             executeLoopjCall();
 
+            St1.setText("");
+            St2.setText("Waiting ....");
             mToolbarTitle.setText("Storage");
             mTvBack.setText("Back");
             toolbar.setNavigationIcon(bitmapDescriptorFactory.fromView(mBackView));
-
-
         }
     }
 
@@ -254,26 +252,26 @@ public class StorageActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String str = new String(responseBody);
-                St1.setText(str);
+                dataHandle(str);
             }
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                St1.setText("Fail to get the content");
+                St2.setText("Fail to get the content");
             }
         } );
+    }
 
-        new AsyncHttpClient().get(t2_url, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                String str = new String(responseBody);
-                St2.setText(str);
+    private void dataHandle(String data) {
+        String title = "";
+        String content = "";
 
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                St1.setText("网络连接失败");
-            }
-        } );
+        int index =  data.indexOf("\n");
+        if(index>0){
+            title=data.substring(0,index);
+            content= data.substring(index);
+        }
 
+        St1.setText(title);
+        St2.setText(content);
     }
 }

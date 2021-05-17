@@ -42,7 +42,7 @@ import cz.msebera.android.httpclient.Header;
 public class PurchaseActivity extends AppCompatActivity {
 
     AsyncHttpClient asyncHttpClient;
-    private String t1_url,t2_url;
+    private String t1_url;
 
     private TextView Ptitle;
     private TextView Pstatement;
@@ -280,16 +280,14 @@ public class PurchaseActivity extends AppCompatActivity {
         String title = "";
         String content = "";
 
-
         int index =  data.indexOf("\n");
         if(index>0){
             title=data.substring(0,index);
             content= data.substring(index);
         }
 
-
-        Pstatement.setText(content);
         Ptitle.setText(title);
+        Pstatement.setText(content);
     }
 
 }
