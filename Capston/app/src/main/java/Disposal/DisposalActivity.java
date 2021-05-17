@@ -31,13 +31,11 @@ import cz.msebera.android.httpclient.Header;
 
 public class DisposalActivity extends AppCompatActivity {
     AsyncHttpClient asyncHttpClient;
-    private String t1_url,t2_url;
+    private String t1_url;
 
     private TextView Dt1,Dt2;
-    String Dtitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeDisposal/Disposal_title.txt";
     String Dstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeDisposal/Disposal_statement.txt";
 
-    String Dtitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeDisposal/Disposal_Ctitle.txt";
     String Dstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/SafeDisposal/Disposal_Cstatement.txt";
 
     YouTubePlayerView Dplayer;
@@ -209,19 +207,22 @@ public class DisposalActivity extends AppCompatActivity {
     //统一修改切换中英文方法 isForcibly 强制转换
     private void updateLanguage(boolean isReplace) {
         if (Constants.isChinese) {
-            t1_url=Dtitle2;
-            t2_url=Dstatement2;
+            t1_url=Dstatement2;
             executeLoopjCall();
 
-            Dt1.setText("等待中");
+            Dt1.setText("");
+            Dt2.setText("等待中");
+
             //修改标题
             mToolbarTitle.setText("处置");
             mTvBack.setText("返回");
             toolbar.setNavigationIcon(bitmapDescriptorFactory.fromView(mBackView));
         } else {
-            t1_url=Dtitle1;
-            t2_url=Dstatement1;
+            t1_url=Dstatement1;
             executeLoopjCall();
+
+            Dt1.setText("");
+            Dt2.setText("Waiting ....");
 
             mToolbarTitle.setText("Disposal");
             mTvBack.setText("Back");
@@ -255,23 +256,26 @@ public class DisposalActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String str = new String(responseBody);
-                Dt1.setText(str);
+                dataHandle(str);
             }
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Dt1.setText("Fail to get the content");
+                Dt2.setText("Fail to get the content");
             }
         } );
+    }
 
-        new AsyncHttpClient().get(t2_url, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                String str = new String(responseBody);
-                Dt2.setText(str);
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-            }
-        } );
+    private void dataHandle(String data) {
+        String title = "";
+        String content = "";
+
+        int index =  data.indexOf("\n");
+        if(index>0){
+            title=data.substring(0,index);
+            content= data.substring(index);
+        }
+
+        Dt1.setText(title);
+        Dt2.setText(content);
     }
 }

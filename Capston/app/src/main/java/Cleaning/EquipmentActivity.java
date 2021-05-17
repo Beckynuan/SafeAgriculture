@@ -31,13 +31,11 @@ import cz.msebera.android.httpclient.Header;
 
 public class EquipmentActivity extends AppCompatActivity {
     AsyncHttpClient asyncHttpClient;
-    private String t1_url,t2_url;
+    private String t1_url;
 
     private TextView Et1,Et2;
-    String Etitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_title.txt";
     String Estatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_statement.txt";
 
-    String Etitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_Ctitle.txt";
     String Estatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/CleaningEquipment/Cleanning_Cstatement.txt";
 
     YouTubePlayerView Eplayer; // ssss
@@ -209,19 +207,22 @@ public class EquipmentActivity extends AppCompatActivity {
     //统一修改切换中英文方法 isForcibly 强制转换
     private void updateLanguage(boolean isReplace) {
         if (Constants.isChinese) {
-            t1_url=Etitle2;
-            t2_url=Estatement2;
+            t1_url=Estatement2;
             executeLoopjCall();
 
-            Et1.setText("等待中");
+            Et1.setText("");
+            Et2.setText("等待中");
+
             //修改标题
             mToolbarTitle.setText("清洗设备");
             mTvBack.setText("返回");
             toolbar.setNavigationIcon(bitmapDescriptorFactory.fromView(mBackView));
         } else {
-            t1_url=Etitle1;
-            t2_url=Estatement1;
+            t1_url=Estatement1;
             executeLoopjCall();
+
+            Et1.setText("");
+            Et2.setText("Waiting ....");
 
             mToolbarTitle.setText("Cleanning equipment");
             mTvBack.setText("Back");
@@ -255,23 +256,26 @@ public class EquipmentActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String str = new String(responseBody);
-                Et1.setText(str);
+                dataHandle(str);
             }
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Et1.setText("Fail to get the content");
+                Et2.setText("Fail to get the content");
             }
         } );
+    }
 
-        new AsyncHttpClient().get(t2_url, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                String str = new String(responseBody);
-                Et2.setText(str);
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-            }
-        } );
+    private void dataHandle(String data) {
+        String title = "";
+        String content = "";
+
+        int index =  data.indexOf("\n");
+        if(index>0){
+            title=data.substring(0,index);
+            content= data.substring(index);
+        }
+
+        Et1.setText(title);
+        Et2.setText(content);
     }
 }

@@ -31,13 +31,11 @@ import cz.msebera.android.httpclient.Header;
 
 public class SprayingActivity extends AppCompatActivity {
     AsyncHttpClient asyncHttpClient;
-    private String t1_url,t2_url;
+    private String t1_url;
 
     private TextView Spt1,Spt2;
-    String Sptitle1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Spraying/Spraying_title.txt";
     String Spstatement1 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Spraying/Spraying_statement.txt";
 
-    String Sptitle2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Spraying/Spraying_Ctitle.txt";
     String Spstatement2 = "https://raw.githubusercontent.com/Beckynuan/comp5703/main/resources/Spraying/Spraying_Cstatement.txt";
 
     YouTubePlayerView Spplayer;
@@ -209,19 +207,22 @@ public class SprayingActivity extends AppCompatActivity {
     //统一修改切换中英文方法 isForcibly 强制转换
     private void updateLanguage(boolean isReplace) {
         if (Constants.isChinese) {
-            t1_url=Sptitle2;
-            t2_url=Spstatement2;
+            t1_url=Spstatement2;
             executeLoopjCall();
 
-            Spt1.setText("等待中");
+            Spt1.setText("");
+            Spt2.setText("等待中");
+
             //修改标题
             mToolbarTitle.setText("喷洒");
             mTvBack.setText("返回");
             toolbar.setNavigationIcon(bitmapDescriptorFactory.fromView(mBackView));
         } else {
-            t1_url=Sptitle1;
-            t2_url=Spstatement1;
+            t1_url=Spstatement1;
             executeLoopjCall();
+
+            Spt1.setText("");
+            Spt2.setText("Waiting ....");
 
             mToolbarTitle.setText("Spraying");
             mTvBack.setText("Back");
@@ -255,23 +256,26 @@ public class SprayingActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String str = new String(responseBody);
-                Spt1.setText(str);
+                dataHandle(str);
             }
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Spt1.setText("Fail to get the content");
+                Spt2.setText("Fail to get the content");
             }
         } );
+    }
 
-        new AsyncHttpClient().get(t2_url, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                String str = new String(responseBody);
-                Spt2.setText(str);
-            }
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-            }
-        } );
+    private void dataHandle(String data) {
+        String title = "";
+        String content = "";
+
+        int index =  data.indexOf("\n");
+        if(index>0){
+            title=data.substring(0,index);
+            content= data.substring(index);
+        }
+
+        Spt1.setText(title);
+        Spt2.setText(content);
     }
 }

@@ -49,7 +49,7 @@
                 android:layout_marginTop="40dp"
                 android:gravity="left"
                 android:layout_marginLeft="10dp"
-                android:textSize="16sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="#000000"
                 tools:ignore="DuplicateIds,MissingConstraints" />
@@ -58,7 +58,6 @@
                 android:id="@+id/SpStatement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
                 android:padding="10dp"
                 android:text="Waiting"
                 android:textColor="@color/black"
