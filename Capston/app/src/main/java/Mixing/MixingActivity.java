@@ -275,6 +275,7 @@ public class MixingActivity extends AppCompatActivity {
             content= data.substring(index);
         }
 
+        //
         Mt1.setText(title);
         Mt2.setText(content);
     }
