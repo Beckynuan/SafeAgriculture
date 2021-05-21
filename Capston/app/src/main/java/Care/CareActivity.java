@@ -133,6 +133,10 @@ public class CareActivity extends AppCompatActivity {
         });
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+        Cplayer.release();
+    }
 
     @Override
     protected void onResume() {

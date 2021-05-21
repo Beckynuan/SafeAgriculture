@@ -133,6 +133,10 @@ public class MixingActivity extends AppCompatActivity {
         });
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+        Mplayer.release();
+    }
 
     @Override
     protected void onResume() {

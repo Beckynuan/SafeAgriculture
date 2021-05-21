@@ -133,6 +133,10 @@ public class DisposalActivity extends AppCompatActivity {
         });
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+        Dplayer.release();
+    }
 
     @Override
     protected void onResume() {

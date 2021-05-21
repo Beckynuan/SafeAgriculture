@@ -133,6 +133,10 @@ public class StorageActivity extends AppCompatActivity {
         });
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+        Splayer.release();
+    }
 
     @Override
     protected void onResume() {

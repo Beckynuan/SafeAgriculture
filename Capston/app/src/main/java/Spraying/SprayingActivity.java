@@ -133,6 +133,10 @@ public class SprayingActivity extends AppCompatActivity {
         });
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+        Spplayer.release();
+    }
 
     @Override
     protected void onResume() {

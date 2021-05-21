@@ -133,6 +133,10 @@ public class EquipmentActivity extends AppCompatActivity {
         });
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+        Eplayer.release();
+    }
 
     @Override
     protected void onResume() {

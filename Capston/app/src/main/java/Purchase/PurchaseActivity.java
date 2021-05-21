@@ -145,6 +145,10 @@ public class PurchaseActivity extends AppCompatActivity {
         });
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+        player.release();
+    }
 
     @Override
     protected void onResume() {
