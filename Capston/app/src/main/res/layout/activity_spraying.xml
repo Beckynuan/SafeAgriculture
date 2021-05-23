@@ -16,13 +16,34 @@
         app:title=""
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/ToolbarStyle" >
-        <TextView
-            android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_toLeftOf="@+id/SPiv_flash"
+                android:layout_centerInParent="true" />
+            <ImageView
+                android:id="@+id/SPiv_language"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_translation"
+                android:layout_alignParentRight="true"
+                android:layout_height="?attr/actionBarSize"/>
+            <ImageView
+                android:id="@+id/SPiv_flash"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_refresh"
+                android:layout_toLeftOf="@id/SPiv_language"
+                android:layout_height="?attr/actionBarSize"/>
+        </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView

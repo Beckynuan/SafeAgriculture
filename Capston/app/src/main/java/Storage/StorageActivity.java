@@ -1,5 +1,6 @@
 package Storage;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +32,9 @@ import Purchase.PurchaseActivity;
 import cz.msebera.android.httpclient.Header;
 
 public class StorageActivity extends AppCompatActivity {
+    private ImageView mIvLanguage;
+    private ImageView mIvFlash;
+
     AsyncHttpClient asyncHttpClient;
     private String t1_url;
 
@@ -53,6 +58,9 @@ public class StorageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storage);
+
+        mIvLanguage = findViewById(R.id.Siv_language);
+        mIvFlash = findViewById(R.id.Siv_flash);
 
         St1=(TextView)findViewById(R.id.STitle);
         St2=(TextView)findViewById(R.id.SStatement);
@@ -78,6 +86,53 @@ public class StorageActivity extends AppCompatActivity {
         });
         //修改状态栏为文字为黑色
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+
+        mIvLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View view = LayoutInflater.from(StorageActivity.this).inflate(R.layout.pop_language, null, false);
+                final PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                //设置点击外侧可以消失
+                popupWindow.setOutsideTouchable(true);
+                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+                    @Override
+                    public void onDismiss() {
+                        bgAlpha(1.0f);//消失后,恢复亮度
+                    }
+                });
+                TextView tvChinese = view.findViewById(R.id.tv_chinese);
+                TextView tvEnglish = view.findViewById(R.id.tv_english);
+                //点击中文
+                tvChinese.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Constants.isChinese=true;
+//                        item.setTitle("中文");
+                        updateLanguage(false);
+                        popupWindow.dismiss();
+                    }
+                });
+                //点击英文
+                tvEnglish.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Constants.isChinese=false;
+//                        item.setTitle("English");
+                        updateLanguage(false);
+                        popupWindow.dismiss();
+                    }
+                });
+                bgAlpha(0.6f);//显示pop,背景变灰
+                //定位
+                PopupWindowCompat.showAsDropDown(popupWindow, toolbar, -20, 0, Gravity.RIGHT);
+            }
+        });
+        mIvFlash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reStartActivity();
+            }
+        });
 
         Splayer = (YouTubePlayerView) findViewById(R.id.Syoutube);
 
@@ -144,57 +199,10 @@ public class StorageActivity extends AppCompatActivity {
         updateLanguage(false);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //导入菜单布局
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //创建菜单项的点击事件
-        switch (item.getItemId()) {
-            case R.id.language:
-                View view = LayoutInflater.from(this).inflate(R.layout.pop_language, null, false);
-                final PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                //设置点击外侧可以消失
-                popupWindow.setOutsideTouchable(true);
-                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-                    @Override
-                    public void onDismiss() {
-                        bgAlpha(1.0f);//消失后,恢复亮度
-                    }
-                });
-                TextView tvChinese = view.findViewById(R.id.tv_chinese);
-                TextView tvEnglish = view.findViewById(R.id.tv_english);
-                //点击中文
-                tvChinese.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Constants.isChinese=true;
-                        item.setTitle("中文");
-                        updateLanguage(false);
-                        popupWindow.dismiss();
-                    }
-                });
-                //点击英文
-                tvEnglish.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Constants.isChinese=false;
-                        item.setTitle("English");
-                        updateLanguage(false);
-                        popupWindow.dismiss();
-                    }
-                });
-                bgAlpha(0.6f);//显示pop,背景变灰
-                //定位
-                PopupWindowCompat.showAsDropDown(popupWindow, toolbar, -20, 0, Gravity.RIGHT);
-                break;
-            default:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
+    private void reStartActivity() {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
     }
 
     /**
